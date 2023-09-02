@@ -20,6 +20,9 @@ protected:
 	void CreateMaterialFromSelectedTextures();
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "CreateMaterialFromSelectedTextures")
+	bool bCustomMaterialName = true;
+	
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "CreateMaterialFromSelectedTextures", meta = (EditCondition = "bCustomMaterialName"))
 	FString MaterialName = TEXT("M_");
 #pragma endregion 
 };

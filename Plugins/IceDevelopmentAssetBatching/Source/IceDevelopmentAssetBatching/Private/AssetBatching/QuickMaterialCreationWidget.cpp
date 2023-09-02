@@ -7,5 +7,12 @@
 
 void UQuickMaterialCreationWidget::CreateMaterialFromSelectedTextures()
 {
-	DebugHeader::PrintMessage(TEXT("Working"));
+	if (bCustomMaterialName)
+	{
+		if (MaterialName.IsEmpty() || MaterialName.Equals(TEXT("M_")))
+		{
+			DebugHeader::ShowMesDialog(EAppMsgType::Ok,TEXT("请输入有效的材质名！必须以M_开头！"));
+			return;
+		}
+	}
 }
